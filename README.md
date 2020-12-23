@@ -1,6 +1,6 @@
 # MuchNotGiven
 
-TODO: Write a gem description
+Add "not given" default values to your objects.
 
 ## Usage
 
