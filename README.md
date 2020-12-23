@@ -1,10 +1,33 @@
 # MuchNotGiven
 
-Add "not given" default values to your objects.
+Add "not given" default values to your objects. This allows you to safely detect whether a method has been given argument values or not.
 
 ## Usage
 
-TODO: Write code samples and usage instructions here
+```ruby
+module MyNamespace
+  include MuchNotGiven
+end
+
+MyNamespace.not_given                           # => MyNamespace.not_given
+"some value" == MyNamespace.not_given           # => false
+MyNamespace.not_given?("some value")            # => false
+MyNamespace.not_given?(MyNamespace.not_given?)  # => true
+MyNamespace.given?("some value")                # => true
+MyNamespace.given?(MyNamespace.not_given?)      # => false
+
+def my_method(value = MyNamespace.not_given)
+  if MyNamespace.given?(value)
+    # do something with the given value
+  end
+end
+
+def my_method(arg_value = MyNamespace.not_given)
+  value = MyNamespace.given?(value) ? value : "some default value"
+
+  # do something with the optionally defaulted value
+end
+```
 
 ## Installation
 

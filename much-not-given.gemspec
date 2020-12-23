@@ -21,4 +21,6 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = "~> 2.5"
 
   gem.add_development_dependency("assert", ["~> 2.18.4"])
+
+  gem.add_dependency("much-plugin", ["~> 0.2.2"])
 end
