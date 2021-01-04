@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "much-not-given/version"
 require "much-plugin"
 
