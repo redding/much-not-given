@@ -6,9 +6,9 @@ require "much-not-given"
 module MuchNotGiven
   class UnitTests < Assert::Context
     desc "MuchNotGiven"
-    subject { unit_module }
+    subject{ unit_module }
 
-    let(:unit_module) { MuchNotGiven }
+    let(:unit_module){ MuchNotGiven }
 
     should "inlcude MuchMixin" do
       assert_that(unit_module).includes(MuchMixin)
@@ -17,19 +17,19 @@ module MuchNotGiven
 
   class ReceiverTests < UnitTests
     desc "reciver"
-    subject { receiver_class }
+    subject{ receiver_class }
 
-    let(:receiver_class) {
+    let(:receiver_class) do
       Class.new do
         include MuchNotGiven
       end
-    }
+    end
 
-    let(:value1) {
+    let(:value1) do
       Factory.public_send(
-        [:integer, :string, :float, :data, :time, :path, :boolean].sample
+        [:integer, :string, :float, :time, :path, :boolean].sample,
       )
-    }
+    end
 
     should have_imeths :not_given, :not_given?, :given?
 

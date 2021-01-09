@@ -10,7 +10,7 @@ module MuchNotGiven
     def not_given
       @not_given ||=
         begin
-          Class.new {
+          Class.new{
             def initialize(receiver_name)
               @receiver_name = receiver_name
             end
@@ -38,7 +38,7 @@ module MuchNotGiven
                 super
               end
             end
-          }.new(self.inspect)
+          }.new(inspect)
         end
     end
 
