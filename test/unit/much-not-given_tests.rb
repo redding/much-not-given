@@ -10,8 +10,8 @@ module MuchNotGiven
 
     let(:unit_module) { MuchNotGiven }
 
-    should "inlcude MuchPlugin" do
-      assert_that(unit_module).includes(MuchPlugin)
+    should "inlcude MuchMixin" do
+      assert_that(unit_module).includes(MuchMixin)
     end
   end
 

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require "much-not-given/version"
-require "much-plugin"
+require "much-mixin"
 
 module MuchNotGiven
-  include MuchPlugin
+  include MuchMixin
 
-  plugin_class_methods do
+  mixin_class_methods do
     def not_given
       @not_given ||=
         begin

@@ -24,5 +24,5 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency("assert", ["~> 2.19.0"])
 
-  gem.add_dependency("much-plugin", ["~> 0.2.3"])
+  gem.add_dependency("much-mixin", ["~> 0.2.3"])
 end
