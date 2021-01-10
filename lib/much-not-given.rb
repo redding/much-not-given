@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 require "much-not-given/version"
-require "much-plugin"
+require "much-mixin"
 
 module MuchNotGiven
-  include MuchPlugin
+  include MuchMixin
 
-  plugin_class_methods do
+  mixin_class_methods do
     def not_given
       @not_given ||=
         begin
-          Class.new {
+          Class.new{
             def initialize(receiver_name)
               @receiver_name = receiver_name
             end
@@ -38,7 +38,7 @@ module MuchNotGiven
                 super
               end
             end
-          }.new(self.inspect)
+          }.new(inspect)
         end
     end
 
